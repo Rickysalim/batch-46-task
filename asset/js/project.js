@@ -1,4 +1,45 @@
+// let checkboxValue = [
+//   {
+//     name: "node.js",
+//   },
+//   {
+//     name: "react.js",
+//   },
+//   {
+//     name: "next.js",
+//   },
+//   {
+//     name: "typescript",
+//   },
+// ];
+
 let projects = [];
+
+const btnFile = document.getElementById("image-project");
+const fileChosen = document.getElementById("file-chosen");
+btnFile.addEventListener("change", function () {
+  fileChosen.textContent = this.files[0].name;
+});
+
+// function mapCheckbox() {
+//   checkboxValue.map((item) => {
+//     document.getElementById("checkbox").innerHTML += `
+//      <div>
+//       <input 
+//         type="checkbox" 
+//         id="${item.name}" 
+//         value="${item.name}" 
+//         class="${item.name}"
+//         style="padding-top: 0"
+//         />
+//       </div>
+//      `;
+//   });
+// }
+
+// mapCheckbox();
+
+console.info(document.getElementById("react.js"));
 
 function clearData() {
   document.getElementById("contents").innerHTML = "";
@@ -21,19 +62,18 @@ function getData(projects) {
         </div>
         `;
   }
-  
 }
 
 function reset() {
-    document.getElementById("project_name").value = "";
-    document.getElementById("start_date").value  = "";
-    document.getElementById("end_date").value  = "";
-    document.getElementById("input-blog-image").value  = "";
-    document.getElementById("description").value  = ""
+  document.getElementById("project_name").value = "";
+  document.getElementById("start_date").value = "";
+  document.getElementById("end_date").value = "";
+  document.getElementById("input-blog-image").value = "";
+  document.getElementById("description").value = "";
 }
 
 function getProject(event) {
-event.preventDefault()
+  event.preventDefault();
   const project_name = document.getElementById("project_name").value;
   const start_date = document.getElementById("start_date").value;
   const end_date = document.getElementById("end_date").value;
@@ -50,9 +90,9 @@ event.preventDefault()
   if (document.getElementById("typescript").checked) {
     technologies.push(document.getElementById("typescript").value);
   }
-  const image = document.getElementById("input-blog-image").files[0];
+  const image = document.getElementById("image-project").files[0];
   const blob = image ? URL.createObjectURL(image) : null;
-  const description = document.getElementById("description").value
+  const description = document.getElementById("description").value;
 
   let project = {
     project_name,
@@ -60,10 +100,10 @@ event.preventDefault()
     end_date,
     technologies,
     image: blob,
-    description
+    description,
   };
 
   projects.push(project);
   getData(projects);
-  reset()
+  reset();
 }
