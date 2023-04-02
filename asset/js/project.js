@@ -82,24 +82,51 @@ function getData(projects) {
 }
 
 function getDuration(startDate, endDate) {
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-  const year = end.getFullYear() - start.getFullYear();
-  if (year > 0) {
-    return `${year} Tahun`;
+  // const start = new Date(startDate);
+  // const end = new Date(endDate);
+  // const year = end.getFullYear() - start.getFullYear();
+  // if (year > 0) {
+  //   return `${year} Tahun`;
+  // } else {
+  //   const month = (end.getMonth() + 1) - (start.getMonth() + 1);
+  //   if (month > 0) {
+  //     return `${month} Bulan`;
+  //   } else {
+  //     const day = end.getDate() - start.getDate();
+  //     if (day > 0) {
+  //       return `${day} Hari`;
+  //     } else {
+  //       return `Sehari`;
+  //     }
+  //   }
+  // }
+  const distance = new Date(endDate) - new Date(startDate);
+  const yearDistance = Math.floor(distance / (12 * 30 * 24 * 60 * 60 * 1000))
+  console.info(yearDistance)
+  if(yearDistance > 0) {
+    return `${yearDistance} Year`;
   } else {
-    const month = end.getMonth() + 1 - (start.getMonth() + 1);
-    if (month > 0) {
-      return `${month} Bulan`;
+    const monthDistance = Math.floor(distance / (30 * 24 * 60 * 60 * 1000))
+    if(monthDistance > 0) {
+      return `${monthDistance} Month`
     } else {
-      const day = end.getDate() - start.getDate();
-      if (day > 0) {
-        return `${day} Hari`;
+      const dayDistance = Math.floor(distance / (24 * 60 * 60 * 1000)) 
+      if(dayDistance > 0) {
+        return `${dayDistance} Day`
       } else {
-        return `Sehari`;
+        return `1 day`
       }
     }
-  }
+  } 
+  
+
+  // 1 minggu = 7 hari
+  // 1 hari = 24 jam
+  // 1 bulan = 30 hari
+  // 1 tahun = 12 bulan
+  // 1 jam = 60 menit
+  // 1 menit = 60 detik
+  // 1 detik = 1000
 }
 
 function reset() {
