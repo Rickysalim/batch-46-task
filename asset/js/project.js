@@ -60,9 +60,11 @@ function getData(projects) {
                     <p>${projects[i].description}</p>
                 </div>
                 <div class="tech-logo-section" id="tech-logo">
-                ${projects[i].technologies.map((item) => {
-                  return `${item?.image}`;
-                }).join(" ")}
+                ${projects[i].technologies
+                  .map((item) => {
+                    return `${item?.image}`;
+                  })
+                  .join(" ")}
                 </div>
                 <div class="action">
                     <button>Edit</button>
@@ -71,6 +73,11 @@ function getData(projects) {
             </div>
         </div>
         `;
+    // document.getElementById("tech-logo").innerHTML = "";
+    // for (let j = 0; j < projects[i].technologies.length; j++) {
+    //   console.info(projects[i]);
+    // document.getElementById("tech-logo").innerHTML += projects[i].technologies[j].image;
+    // }
   }
 }
 
@@ -119,13 +126,13 @@ function getProject(event) {
   if (document.getElementById("next.js").checked) {
     technologies.push({
       name: document.getElementById("next.js").value,
-      image: '<img src="./asset/images/react.png"/>',
+      image: '<img src="./asset/images/next-js-icon-256x256-6j7ddke7.png"/>',
     });
   }
   if (document.getElementById("react.js").checked) {
     technologies.push({
       name: document.getElementById("react.js").value,
-      image: '<img src="./asset/images/next-js-icon-256x256-6j7ddke7.png"/>',
+      image: '<img src="./asset/images/react.png"/>',
     });
   }
 
