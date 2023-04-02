@@ -81,7 +81,7 @@ function getDuration(startDate, endDate) {
         if(day > 0) {
           return `${day} Hari`
         } else {
-          return `Terbaru`
+          return `Sehari`
         }
       }
    }
