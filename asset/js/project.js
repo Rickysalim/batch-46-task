@@ -130,11 +130,17 @@ function getDuration(startDate, endDate) {
 }
 
 function reset() {
+  const fileChosen =  document.getElementById("file-chosen");
   document.getElementById("project_name").value = "";
   document.getElementById("start_date").value = "";
   document.getElementById("end_date").value = "";
   document.getElementById("image-project").value = "";
+  fileChosen.textContent = "No File Choosen"
   document.getElementById("description").value = "";
+  document.getElementById("node.js").checked = false;
+  document.getElementById("next.js").checked = false;
+  document.getElementById("react.js").checked = false;
+  document.getElementById("typescript").checked = false;
 }
 
 function getProject(event) {

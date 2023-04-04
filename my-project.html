@@ -3,6 +3,7 @@
 <head>
     <title>My Project</title>
     <link href="./asset/css/my-project.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 
 <body>
@@ -10,18 +11,32 @@
         <div class="nav-left">
             <ul>
                 <img src="asset/images/logo.png" alt="logo">
-                <li>
+                <li class="nav-list">
                     <a href="index.html">Home</a>
                 </li>
-                <li>
+                <li class="nav-list">
                     <a href="my-project.html">My Project</a>
                 </li>
             </ul>
         </div>
 
-        <div class="nav-right">
+        <div class="nav-right nav-list">
             <a href="contact-me.html">Contact Me</a>
         </div>
+
+        <div class="nav-right-mobile">
+            <button onclick="openMenu()" style="background-color: transparent; border: none; cursor: pointer;">
+                <span class="iconify" data-icon="mdi:hamburger-menu" style="width: 30px; height: 30px;"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nav-mobile-container" id="menu">
+        <a href="index.html">Home</a>
+        <a href="my-project.html">My Project</a>
+        <a href="contact-me.html">
+            <span class="nav-down" >Contact Me</span>
+        </a>
     </div>
 
     <div style="background-color: #e8e4ec ;">
@@ -35,7 +50,7 @@
                 <input type="text" id="project_name">
             </div>
 
-            <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="form-date">
                 <div>
                     <label for="start_date">Start Date</label>
                     <input type="date" id="start_date">
@@ -118,9 +133,8 @@
             </div>
         </div>
     </div>
-
-
 </body>
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 <script src="./asset/js/project.js"></script>
-
+<script src="./asset/js/menu.js"></script>
 </html>

@@ -11,21 +11,33 @@
         <div class="nav-left">
             <ul>
                 <img src="asset/images/logo.png" alt="logo">
-                <li>
+                <li class="nav-list">
                     <a href="index.html">Home</a>
                 </li>
-                <li>
+                <li class="nav-list">
                     <a href="my-project.html">My Project</a>
                 </li>
             </ul>
         </div>
 
-        <div class="nav-right">
+        <div class="nav-right nav-list">
             <a href="contact-me.html">Contact Me</a>
+        </div>
+
+        <div class="nav-right-mobile">
+            <button onclick="openMenu()" style="background-color: transparent; border: none; cursor: pointer;">
+                <span class="iconify" data-icon="mdi:hamburger-menu" style="width: 30px; height: 30px;"></span>
+            </button>
         </div>
     </div>
 
-    <!--  <div></div>  -->
+    <div class="nav-mobile-container" id="menu">
+        <a href="index.html">Home</a>
+        <a href="my-project.html">My Project</a>
+        <a href="contact-me.html">
+            <span class="nav-down" >Contact Me</span>
+        </a>
+    </div>
 
     <div class="base">
         <div class="flex-container">
@@ -52,12 +64,14 @@
                     original form,
                     accompanied by English versions from the 1914 translation by H. Rackham.
                 </p>
-                <button class="contact">Contact</button>
 
-                <button class="download">
-                    Download CV
-                    <span class="iconify" data-icon="material-symbols:download-rounded"></span>
-                </button>
+                <div class="button-section">
+                    <button class="contact">Contact</button>
+                    <button class="download">
+                        Download CV
+                        <span class="iconify" data-icon="material-symbols:download-rounded"></span>
+                    </button>
+                </div>
 
                 <div class="footer">
                     <span class="iconify icon-props" data-icon="line-md:linkedin"></span>
@@ -67,7 +81,6 @@
                 </div>
             </div>
             <div class="flex-item-right">
-
                 <div class="card">
                     <img src="./asset/images/person.png" alt="Avatar" style="width:100%">
                     <div class="container">
@@ -80,5 +93,5 @@
     </div>
 </body>
 <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-
+<script src="./asset/js/menu.js"></script>
 </html>

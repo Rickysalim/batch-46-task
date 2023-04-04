@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
 }
@@ -41,6 +40,14 @@ body {
     color: white;
 }
 
+.nav-right-mobile {
+    display: none;
+}
+
+.nav-mobile-container {
+    display: none;
+}
+
 /* Title Form Styling*/
 .title {
     display: flex;
@@ -64,25 +71,39 @@ form div {
     margin-top: 10px;
 }
 
+form .form-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .checkbox {
     display: grid;
     grid-template-columns: auto auto;
 }
 
 
-.checkbox, div,.checkbox-nodejs[type=checkbox]::before {
-      content: 'node.js';
+.checkbox,
+div,
+.checkbox-nodejs[type=checkbox]::before {
+    content: 'node.js';
 }
 
-.checkbox, div,.checkbox-reactjs[type=checkbox]::before {
+.checkbox,
+div,
+.checkbox-reactjs[type=checkbox]::before {
     content: 'react.js';
 }
 
-.checkbox, div,.checkbox-typescript[type=checkbox]::before {
+.checkbox,
+div,
+.checkbox-typescript[type=checkbox]::before {
     content: 'typescript';
 }
 
-.checkbox, div,.checkbox-nextjs[type=checkbox]::before {
+.checkbox,
+div,
+.checkbox-nextjs[type=checkbox]::before {
     content: 'next.js';
 }
 
@@ -154,7 +175,7 @@ textarea {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 10px;
-    width: 300px;
+    width: 100%;
 }
 
 .project-item .subtitle {
@@ -196,8 +217,8 @@ textarea {
 }
 
 .custom-project-image img {
-   margin-right: 10px;
-   cursor: pointer;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .action {
@@ -214,7 +235,7 @@ textarea {
     width: 100%;
 }
 
-.tech-logo-section  {
+.tech-logo-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -224,4 +245,50 @@ textarea {
 .tech-logo-section img {
     width: 30px;
     height: 30px;
+}
+
+@media (max-width: 800px) {
+
+    .nav-right-mobile {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .nav-mobile-container {
+        font-size: 24px;
+        background-color: #d8d4d4;
+    }
+
+    .nav-mobile-container a {
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        text-decoration: none;
+        font-family: Poppins, Helvetica, sans-serif;
+    }
+
+    .nav-left img {
+        margin-left: 0;
+    }
+
+    .nav-mobile-container .nav-down {
+        background-color: #000;
+        border-radius: 15px;
+        color: #fff;
+        padding: 10px 15px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 10px;
+        margin-top: 30px;
+    }
+
 }
