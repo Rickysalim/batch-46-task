@@ -1,4 +1,5 @@
 let menuIsOpen = false 
+let menuIsOpen = false 
 
 function openMenu() {
     let menu = document.getElementById('menu')
