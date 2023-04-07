@@ -56,6 +56,21 @@ body {
     justify-content: center;
 }
 
+.container .rating-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.rating-section button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 .container .title {
     margin-top: 50px;
     text-align: center;
@@ -81,7 +96,7 @@ body {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 20px;
-    width: 100%;
+    width: 400px;
 }
 
 .card-item img {
