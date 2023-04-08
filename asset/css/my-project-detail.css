@@ -11,6 +11,8 @@ body {
     justify-content: space-between;
     background-color: #f8f4f4;
     padding: 0 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .nav img {

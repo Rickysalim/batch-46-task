@@ -24,6 +24,8 @@ body {
 .nav-left ul li {
     margin-right: 30px;
     font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .nav-left a {

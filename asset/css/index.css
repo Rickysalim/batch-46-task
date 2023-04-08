@@ -24,6 +24,8 @@ body {
 
 .nav-left ul li {
     margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 20px;
 }
 
@@ -197,67 +199,4 @@ body {
         padding: 10px 15px;
     }
 
-}
-
-@media (max-width: 500px) {
-    
-    .flex-item-left {
-        text-align: center;
-    }
-    
-    .flex-item-left h1 {
-        font-size: 10px;
-    }
-    
-    .flex-item-left p {
-        font-size: 10px;
-    }
-
-    .flex-item-left .button-section {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        margin-top: 30px;
-    }
-
-    .flex-item-left button{
-        padding: 10px;
-    }
-
-    .footer .icon-props {
-        width: 15px;
-        height: 15px;
-    }
-}
-
-
-@media (max-width: 450px) {
-    
-    .flex-item-left {
-        text-align: center;
-    }
-    
-    .flex-item-left h1 {
-        font-size: 10px;
-    }
-    
-    .flex-item-left p {
-        font-size: 10px;
-    }
-
-    .flex-item-left .button-section {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        margin-top: 30px;
-    }
-
-    .flex-item-left button{
-        padding: 5px;
-    }
-
-    .footer .icon-props {
-        width: 10px;
-        height: 10px;
-    }
 }
