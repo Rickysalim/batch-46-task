@@ -1,142 +1,141 @@
 <html>
+
 <head>
     <title>My Project</title>
-    <link href="./asset/css/my-project.css" rel="stylesheet">
+    <link href="./asset/css/style.css" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
+
 <body>
-    <div class="nav">
-        <div class="nav-left">
-            <ul>
-                <img src="asset/images/logo.png" alt="logo">
-                <li class="nav-list">
-                    <a href="index.html">Home</a>
-                </li>
-                <li class="nav-list">
-                    <a href="my-project.html">My Project</a>
-                </li>
-                <li class="nav-list">
-                    <b><a href="testimonial.html">Testimonial</a></b>
-                </li>
-            </ul>
-        </div>
-
-        <div class="nav-right nav-list">
-            <a href="contact-me.html">Contact Me</a>
-        </div>
-
-        <div class="nav-right-mobile">
-            <button onclick="openMenu()" style="background-color: transparent; border: none; cursor: pointer;">
-                <span class="iconify" data-icon="mdi:hamburger-menu" style="width: 30px; height: 30px;"></span>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="asset/images/logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-semibold" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-semibold text-orangered" href="my-project.html">Add Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="testimonial.html">Testimonial</a>
+                    </li>
+                </ul>
+                <a class="btn btn-dark d-flex" href="contact-me.html">Contact Me</a>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="nav-mobile-container" id="menu">
-        <a href="index.html">Home</a>
-        <a href="my-project.html">My Project</a>
-        <a href="contact-me.html">
-            <span class="nav-down" >Contact Me</span>
-        </a>
-        <b><a href="testimonial.html">Testimonial</a></b>
-    </div>
-
-    <div style="background-color: #e8e4ec ;">
-        <div class="title">
-            <h1 style="margin-top: 50px;">ADD MY PROJECT</h1>
-        </div>
-
-        <form>
-            <div>
-                <label for="project_name">Project Name</label>
-                <input type="text" id="project_name">
-            </div>
-
-            <div class="form-date">
-                <div>
-                    <label for="start_date">Start Date</label>
-                    <input type="date" id="start_date">
+    <div class="container-fluid" style="background-color: #e8e4ec;">
+        <div class="d-flex justify-content-center">
+            <form>
+                <h1 class="text-center mt-5 mb-5">ADD MY PROJECT</h1>
+                <div class="mb-3">
+                    <label for="project_name" class="form-label">Project Name</label>
+                    <input type="text" class="form-control form-control-lg" id="project_name"
+                        aria-describedby="project_name">
                 </div>
-                <div>
-                    <label for="end_date">End Date</label>
-                    <input type="date" id="end_date">
+
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label for="start_date" class="form-label">Start Date</label>
+                        <input type="date" id="start_date" class="form-control form-control-lg">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="end_date" class="form-label">End Date</label>
+                        <input type="date" id="end_date" class="form-control form-control-lg">
+                    </div>
                 </div>
-            </div>
 
-            <div>
-                <label for="description">Description</label>
-                <textarea id="description"></textarea>
-            </div>
+                <div class="mb-3">
+                    <label for="description">Description</label>
+                    <textarea id="description" class="form-control form-control-lg" rows="5"></textarea>
+                </div>
 
-            <div>
-                <label>Technologies</label>
-                <div class="checkbox" id="checkbox">
-                    <div>
+                <div class="row mb-3">
+                    <label>Technologies</label>
+                    <div class="col-sm-6">
+                        <label for="node.js">Node.js</label>
                         <input type="checkbox" id="node.js" value="node.js" class="checkbox-nodejs" />
                     </div>
-                    <div>
+                    <div class="col-sm-6">
+                        <label for="react.js">React.js</label>
                         <input type="checkbox" id="react.js" value="react.js" class="checkbox-reactjs" />
                     </div>
-                    <div>
+                    <div class="col-sm-6">
+                        <label for="next.js">Next.js</label>
                         <input type="checkbox" id="next.js" value="next.js" class="checkbox-nextjs" />
                     </div>
-                    <div>
+                    <div class="col-sm-6">
+                        <label for="typescript">TypeScript</label>
                         <input type="checkbox" id="typescript" value="typescript" class="checkbox-typescript" />
                     </div>
                 </div>
-            </div>
 
-            <div>
-                <label>Upload Image</label>
-                <div class="custom-project-image">
-                    <label for="image-project" id="actual-btn">Choose</label>
-                    <input type="file" id="image-project" hidden>
-                    <span id="file-chosen">No File Chosen</span>
-                    <img src="./asset/images/file.png" />
+                <div class="mb-3">
+                    <label for="image-project" class="form-label">Choose</label>
+                    <input class="form-control form-control-lg" type="file" id="image-project">
                 </div>
-            </div>
 
-            <div class="submit-section">
-                <button type="submit" onclick="getProject(event)">Submit</button>
-            </div>
-        </form>
+
+                <button type="submit" onclick="getProject(event)" class="btn btn-dark mb-5">Submit</button>
+            </form>
+        </div>
     </div>
 
-    <div style="background-color: #fffcfc;">
-        <div class="second-title">
-            <h1>MY PROJECT</h1>
+    <div class="container-fluid" style="background-color: #fffcfc;">
+
+        <div class="d-flex justify-content-center">
+            <h1 class="mt-5">MY PROJECT</h1>
         </div>
 
-        <div class="grid-container" id="contents">
-            <div class="grid-item">
-                <a href="detail-project.html">
-                    <div class="project-item">
-                        <img src="https://images.klipfolio.com/website/public/8be365cb-7c1b-4a4e-a90d-f588f0553be1/marketing%20dashboard.png"
-                            alt="Picture" />
-                        <div class="subtitle">
-                            <h4>Marketing Dashboard</h4>
-                            <p>Durasi: 3 bulan</p>
-                            <p>react.js,node.js,next.js,typescript</p>
-                            <p>App That used for Marketing, it was deployed and ready to use
-                            </p>
+        <div class="container p-5">
+            <div class="row" id="contents">
+                <div class="col-sm-12 col-md-4">
+                    <a href="detail-project.html" class="text-decoration-none">
+                        <div class="card">
+                            <img src="https://images.klipfolio.com/website/public/8be365cb-7c1b-4a4e-a90d-f588f0553be1/marketing%20dashboard.png"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Marketing Dashboard</h5>
+                                <p class="card-text">Durasi: 3 bulan.</p>
+                                <p class="card-text">App That used for Marketing, it was deployed and ready to use</p>
+                                <div class="d-flex justify-content-between mt-5" id="tech-logo">
+                                    <img src="./asset/images/icons8-nodejs-48.png" class="icon-tech-logo" />
+                                    <img src="./asset/images/react.png" class="icon-tech-logo" />
+                                    <img src="./asset/images/next-js-icon-256x256-6j7ddke7.png"
+                                        class="icon-tech-logo" />
+                                    <img src="./asset/images/typescript.png" class="icon-tech-logo" />
+                                </div>
+                                <div class="d-flex justify-content-between mt-5">
+                                    <button class="btn btn-dark">Edit</button>
+                                    <button class="btn btn-dark">Delete</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tech-logo-section" id="tech-logo">
-                            <img src="./asset/images/icons8-nodejs-48.png"/>
-                            <img src="./asset/images/react.png"/>
-                            <img src="./asset/images/next-js-icon-256x256-6j7ddke7.png"/>
-                            <img src="./asset/images/typescript.png"/>
-                        </div>
-                        <div class="action">
-                           <button>Edit</button>
-                           <button>Delete</button>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
+
     </div>
 </body>
 <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 <script src="./asset/js/project.js"></script>
 <script src="./asset/js/menu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+    crossorigin="anonymous"></script>
+
 </html>

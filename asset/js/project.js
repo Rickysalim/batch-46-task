@@ -47,31 +47,34 @@ function getData(projects) {
   clearData();
   for (let i = 0; i < projects.length; i++) {
     document.getElementById("contents").innerHTML += `
-        <div class="grid-item">
-            <div class="project-item">
-                <img src="${projects[i].image}" alt="Avatar" />
-                <div class="subtitle">
-                    <h4>${projects[i].project_name}</h4>
-                    <p>Durasi: ${getDuration(
-                      projects[i].start_date,
-                      projects[i].end_date
-                    )}</p>
-                    <p></p>
-                    <p>${projects[i].description}</p>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <img src="${
+                          projects[i].image
+                        }" class="card-img-top" alt="Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">${
+                              projects[i].project_name
+                            }</h5>
+                            <p class="card-text">Durasi: ${getDuration(
+                              projects[i].start_date,
+                              projects[i].end_date
+                            )}</p>
+                            <p class="card-text">${projects[i].description}</p>
+                            <div class="d-flex justify-content-between mt-5" id="tech-logo">
+                              ${projects[i].technologies
+                                .map((item) => {
+                                  return `${item?.image}`;
+                                })
+                                .join(" ")}
+                            </div>
+                            <div class="d-flex justify-content-between mt-5">
+                                <button class="btn btn-dark">Edit</button>
+                                <button class="btn btn-dark">Delete</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="tech-logo-section" id="tech-logo">
-                ${projects[i].technologies
-                  .map((item) => {
-                    return `${item?.image}`;
-                  })
-                  .join(" ")}
-                </div>
-                <div class="action">
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </div>
-            </div>
-        </div>
         `;
     // document.getElementById("tech-logo").innerHTML = "";
     // for (let j = 0; j < projects[i].technologies.length; j++) {
@@ -101,24 +104,23 @@ function getDuration(startDate, endDate) {
   //   }
   // }
   const distance = new Date(endDate) - new Date(startDate);
-  const yearDistance = Math.floor(distance / (12 * 30 * 24 * 60 * 60 * 1000))
-  console.info(yearDistance)
-  if(yearDistance > 0) {
+  const yearDistance = Math.floor(distance / (12 * 30 * 24 * 60 * 60 * 1000));
+  console.info(yearDistance);
+  if (yearDistance > 0) {
     return `${yearDistance} Year`;
   } else {
-    const monthDistance = Math.floor(distance / (30 * 24 * 60 * 60 * 1000))
-    if(monthDistance > 0) {
-      return `${monthDistance} Month`
+    const monthDistance = Math.floor(distance / (30 * 24 * 60 * 60 * 1000));
+    if (monthDistance > 0) {
+      return `${monthDistance} Month`;
     } else {
-      const dayDistance = Math.floor(distance / (24 * 60 * 60 * 1000)) 
-      if(dayDistance > 0) {
-        return `${dayDistance} Day`
+      const dayDistance = Math.floor(distance / (24 * 60 * 60 * 1000));
+      if (dayDistance > 0) {
+        return `${dayDistance} Day`;
       } else {
-        return `1 day`
+        return `1 day`;
       }
     }
-  } 
-  
+  }
 
   // 1 minggu = 7 hari
   // 1 hari = 24 jam
@@ -130,12 +132,12 @@ function getDuration(startDate, endDate) {
 }
 
 function reset() {
-  const fileChosen =  document.getElementById("file-chosen");
+  const fileChosen = document.getElementById("file-chosen");
   document.getElementById("project_name").value = "";
   document.getElementById("start_date").value = "";
   document.getElementById("end_date").value = "";
   document.getElementById("image-project").value = "";
-  fileChosen.textContent = "No File Choosen"
+  fileChosen.textContent = "No File Choosen";
   document.getElementById("description").value = "";
   document.getElementById("node.js").checked = false;
   document.getElementById("next.js").checked = false;
@@ -153,26 +155,29 @@ function getProject(event) {
   if (document.getElementById("node.js").checked) {
     technologies.push({
       name: document.getElementById("node.js").value,
-      image: '<img src="./asset/images/icons8-nodejs-48.png"/>',
+      image:
+        '<img src="./asset/images/icons8-nodejs-48.png" class="icon-tech-logo"/>',
     });
   }
   if (document.getElementById("next.js").checked) {
     technologies.push({
       name: document.getElementById("next.js").value,
-      image: '<img src="./asset/images/next-js-icon-256x256-6j7ddke7.png"/>',
+      image:
+        '<img src="./asset/images/next-js-icon-256x256-6j7ddke7.png" class="icon-tech-logo"/>',
     });
   }
   if (document.getElementById("react.js").checked) {
     technologies.push({
       name: document.getElementById("react.js").value,
-      image: '<img src="./asset/images/react.png"/>',
+      image: '<img src="./asset/images/react.png" class="icon-tech-logo"/>',
     });
   }
 
   if (document.getElementById("typescript").checked) {
     technologies.push({
       name: document.getElementById("typescript").value,
-      image: '<img src="./asset/images/typescript.png"/>',
+      image:
+        '<img src="./asset/images/typescript.png" class="icon-tech-logo"/>',
     });
   }
   const image = document.getElementById("image-project").files[0];
