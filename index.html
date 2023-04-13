@@ -37,18 +37,34 @@
     <div class="container mt-5 p-3">
         <div class="row card-home p-5 rounded">
             <div class="col-sm-6">
-                <div class="container">
-                    <h1 id="myTitle" class="text-center"></h1>
-                    <p id="myText" class="text-center mt-5"></p>
+                <h1 class="p-3">Hi Welcome to My Hut</h1>
+                <h3 class="p-3">
+                    What Can I Do ?
+                </h3>
+                <ul>
+                    <li>HTML,CSS,Javascript</li>
+                    <li>Node.js & Golang</li>                
+                    <li>Git,Gitlab,Github</li>
+                    <li>React.js & Next.js</li>
+                    <li>Bootstrap</li>
+                    <li>MySQL & PostgreSQL</li>
+                </ul>
+                <div class="d-flex mt-5">
+                    <button class="btn btn-dark">Contact</button>
+                    <button class="btn btn-light" style="margin-left: 50px;">
+                        Download CV
+                        <span class="iconify icon-props" data-icon="material-symbols:download-rounded"></span>
+                    </button>
                 </div>
-                <div class="d-flex mt-5 justify-content-evenly" id="myContactAndCV"></div>
-                <div class="container mt-5">
-                    <p id="mySocialMedia" class="text-center"></p>
+                <div class="container mt-5 d-flex justify-content-between mb-5">
+                    <span class="iconify icon-social-props" data-icon="line-md:linkedin"></span>
+                    <span class="iconify icon-social-props" data-icon="line-md:instagram"></span>
+                    <span class="iconify icon-social-props" data-icon="line-md:facebook"></span>
+                    <span class="iconify icon-social-props" data-icon="line-md:twitter"></span>
                 </div>
-                <div class="container mt-5 d-flex justify-content-between mb-5" id="mySocialMediaLogo"></div>
             </div>
             <div class="col-sm-6">
-                <div class="container-fluid">
+                <div class="container-fluid ">
                     <div class="card mb-3">
                         <img src="./asset/images/person.png" class="card-img-top" alt="Avatar">
                         <div class="card-body text-center">
@@ -72,48 +88,5 @@
     crossorigin="anonymous"></script>
 <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-<script>
-
-
-
-    new TypeIt("#myTitle", {
-        strings: ["Hi Welcome to My Hut"],
-        speed: 10,
-    }).go().destroy()
-
-    setTimeout(() => {
-        new TypeIt("#myText", {
-            strings: [
-                `My name is Ricky Salim. I'm still Beginner. I can HTML, CSS, Javascript for the Client side and Node and Golang for Server side. I'm still learning C++, Java, Python, PHP, Kotlin, React Native, TypeScript. I'm interested To Learn New Technology. I'm using Git As Version Control System. I'm using React.js and Next.js Framework. ready to work. Dont Forget To Download My CV Above and Get In Touch 😎`,
-            ],
-            speed: 10,
-        }).go().destroy();
-    }, 1000)
-
-    setTimeout(() => {
-        document.getElementById('myContactAndCV').innerHTML += `
-        <button class="btn btn-dark">Contact</button>
-            <button class="btn btn-light ml-5">
-                Download CV
-            <span class="iconify icon-props" data-icon="material-symbols:download-rounded"></span>
-         </button>`
-    }, 8500)
-
-    setTimeout(() => {
-        new TypeIt("#mySocialMedia", {
-            strings: ["All My Of Social Media Below"],
-            speed: 10,
-        }).go()
-    }, 9000)
-
-    setTimeout(() => {
-        document.getElementById('mySocialMediaLogo').innerHTML += `
-             <span class="iconify icon-social-props" data-icon="line-md:linkedin"></span>
-             <span class="iconify icon-social-props" data-icon="line-md:instagram"></span>
-             <span class="iconify icon-social-props" data-icon="line-md:facebook"></span>
-             <span class="iconify icon-social-props" data-icon="line-md:twitter"></span>
-            `
-    }, 10000)
-</script>
 
 </html>
