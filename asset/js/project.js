@@ -76,33 +76,10 @@ function getData(projects) {
                     </div>
                 </div>
         `;
-    // document.getElementById("tech-logo").innerHTML = "";
-    // for (let j = 0; j < projects[i].technologies.length; j++) {
-    //   console.info(projects[i]);
-    // document.getElementById("tech-logo").innerHTML += projects[i].technologies[j].image;
-    // }
   }
 }
 
 function getDuration(startDate, endDate) {
-  // const start = new Date(startDate);
-  // const end = new Date(endDate);
-  // const year = end.getFullYear() - start.getFullYear();
-  // if (year > 0) {
-  //   return `${year} Tahun`;
-  // } else {
-  //   const month = (end.getMonth() + 1) - (start.getMonth() + 1);
-  //   if (month > 0) {
-  //     return `${month} Bulan`;
-  //   } else {
-  //     const day = end.getDate() - start.getDate();
-  //     if (day > 0) {
-  //       return `${day} Hari`;
-  //     } else {
-  //       return `Sehari`;
-  //     }
-  //   }
-  // }
   const distance = new Date(endDate) - new Date(startDate);
   const yearDistance = Math.floor(distance / (12 * 30 * 24 * 60 * 60 * 1000));
   console.info(yearDistance);

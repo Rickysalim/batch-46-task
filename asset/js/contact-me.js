@@ -22,14 +22,4 @@ function onSubmit() {
   let a = document.createElement("a");
   a.href = `mailto:${destination}?subject=${subject}&body= Hallo nama saya ${name}, saya ingin ${message}, bisakah anda menghubungi saya di ${phone}`;
   a.click();
-
-//   let data = {
-//     name: name,
-//     email: email,
-//     phone: phone,
-//     subject: subject,
-//     message: message,
-//   };
-
-//   console.info(data);
 }

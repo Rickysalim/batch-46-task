@@ -1,6 +1,6 @@
 function clearData() {
-    document.getElementById("content").innerHTML = "";
-  }
+  document.getElementById("content").innerHTML = "";
+}
 
 const testimonial = new Promise((resolve, reject) => {
   const xhr = new XMLHttpRequest();
@@ -22,12 +22,8 @@ const testimonial = new Promise((resolve, reject) => {
   xhr.send();
 });
 
-// testimonial
-// .then((res) => console.info(res));
-// .catch((err) => console.error(err));
-
 async function AllTestimonial() {
-  clearData()
+  clearData();
   const response = await testimonial;
   response.forEach(
     (element) =>
